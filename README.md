@@ -20,4 +20,6 @@ npm run dev
 
 ## Deploy
 
-GitHub Actions builds with `npm run build` and syncs `dist/` to Xneelo over FTP (`.github/workflows/deploy.yml`). `public/.htaccess` sends every route to `index.html` (so `/quotes` works) and keeps the review site out of search results.
+Vercel builds with `npm run build` and serves `dist/` (settings in `vercel.json`). Every route falls back to `index.html` (so `/quotes` works), and all responses carry `X-Robots-Tag: noindex, nofollow` so the review site stays out of search results.
+
+`public/.htaccess` keeps the same behaviour if the site is ever moved back to Xneelo.
