@@ -25,16 +25,19 @@ const ClientShowcase = ({ data }) => (
       <div className="client-grid">
         {data.clients.map((client) => {
           const Icon = PLATFORM_ICONS[client.platform];
+          // A card only links out once the client's address is filled in
+          const Card = client.url ? 'a' : 'div';
+          const linkProps = client.url ? { href: client.url, target: '_blank', rel: 'noopener noreferrer' } : {};
           return (
-            <a
+            <Card
               key={client.name}
-              href={client.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="client-card"
+              {...linkProps}
+              className={`client-card${client.url ? '' : ' static'}`}
             >
               <div className="client-card-logo">
-                <img src={client.logoUrl} alt={client.name} loading="lazy" />
+                {client.logoUrl
+                  ? <img src={client.logoUrl} alt={client.name} loading="lazy" />
+                  : <span className="client-card-wordmark">{client.name}</span>}
               </div>
               <div className="client-card-body">
                 <span className="client-card-name">{client.name}</span>
@@ -45,34 +48,13 @@ const ClientShowcase = ({ data }) => (
                   {Icon && <Icon size={18} />}
                   {client.platform}
                 </span>
-                <ArrowUpRight size={18} />
+                {client.url && <ArrowUpRight size={18} />}
               </div>
-            </a>
+            </Card>
           );
         })}
       </div>
 
-      {data.websites?.length > 0 && (
-        <>
-          <h3 className="client-websites-title">{data.websitesTitle}</h3>
-          <div className="client-websites">
-            {data.websites.map((site) => {
-              const body = (
-                <>
-                  <span className="client-website-name">{site.name}</span>
-                  <span className="client-card-platform"><Globe size={18} />Website{site.url && <ArrowUpRight size={16} />}</span>
-                </>
-              );
-              // A card only links out once the site's address has been added
-              return site.url ? (
-                <a key={site.name} href={site.url} target="_blank" rel="noopener noreferrer" className="client-website">{body}</a>
-              ) : (
-                <div key={site.name} className="client-website">{body}</div>
-              );
-            })}
-          </div>
-        </>
-      )}
     </div>
   </section>
 );

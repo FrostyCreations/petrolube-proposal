@@ -83,9 +83,9 @@ export const proposalData = {
         },
         monthly: [
           { name: "Website Care and Content", price: "R2,990", period: "per month", text: "Updates, backups, security monitoring and one optimised blog article every month." },
-          { name: "Hosting", price: "R295", period: "per month", text: "Fast South African hosting with SSL, caching and a CDN. Once-off set-up of R890, including your email records." }
+          { name: "Hosting", tag: "Recommended", price: "R295", period: "per month", text: "Fast South African hosting with SSL, caching and a CDN. Once-off set-up of R890, including your email records." }
         ],
-        optional: { name: "Visual Guide", tag: "Recommended", price: "R4,500", period: "once-off", text: "Optimisation of your existing logo, plus a short guide for colours, fonts and imagery." }
+        optional: { name: "Visual Guide", tag: "Optional", price: "R4,500", period: "once-off", text: "Optimisation of your existing logo, plus a short guide for colours, fonts and imagery." }
       }
     },
 
@@ -117,19 +117,13 @@ export const proposalData = {
       id: 'clients',
       data: {
         title: "Some of our Clients",
+        // Websites built by Big On Digital. A card links out once its `url` is filled in,
+        // and shows the name as lettering until a `logoUrl` is added.
         clients: [
-          { name: "Ferris Cars", tagline: "Luxury Performance Automotive Group", logoUrl: "clients/ferris-group.webp", platform: "Facebook", url: "https://www.facebook.com/ferriscarssa/" },
-          { name: "WorkPods", tagline: "Entrepreneurial Business Growth Campus", logoUrl: "clients/workpods.webp", platform: "Instagram", url: "https://www.instagram.com/workpodscommunity/" },
-          { name: "Century 21 Wildlife", tagline: "Luxury Bushveld Property Experts", logoUrl: "clients/century21-wildlife.webp", platform: "Website", url: "https://www.century21wildlife.co.za/" },
-          { name: "Cashbox Global", tagline: "Private Structured Investment Specialists", logoUrl: "clients/cashbox-global.webp", platform: "LinkedIn", url: "https://www.linkedin.com/company/cashbox-global/" }
-        ],
-        // Websites built by Big On Digital. Add each site's address to `url` to make its card a link.
-        websitesTitle: "Websites We’ve Built",
-        websites: [
-          { name: "Ferris Workshop", url: "" },
-          { name: "Kulani", url: "" },
-          { name: "WHT Electrical", url: "" },
-          { name: "Supercar Rhino Run", url: "" }
+          { name: "Ferris Workshop", tagline: "Supercar Service and Repair Specialists", logoUrl: "clients/ferris-group.webp", platform: "Website", url: "https://ferriscars.com/" },
+          { name: "Kulani", tagline: "Website Design and Copy", logoUrl: "", platform: "Website", url: "" },
+          { name: "WHT Electrical", tagline: "Electrical, Solar, Plumbing and Maintenance", logoUrl: "clients/wht-electrical.svg", platform: "Website", url: "https://whtelectrical.co.za/" },
+          { name: "Supercar Rhino Run", tagline: "Record-Breaking Supercar Charity Convoy", logoUrl: "", platform: "Website", url: "" }
         ]
       }
     },
@@ -205,6 +199,7 @@ export const proposalData = {
         number: "Quote 3",
         ref: "BOD-PLE-2026-03",
         name: "Hosting",
+        tag: "Recommended",
         covers: "Fast, secure South African hosting with SSL, backups and CDN, plus a once-off set-up that fixes your email records",
         onceOff: 890,
         monthly: 295
@@ -214,7 +209,7 @@ export const proposalData = {
         number: "Quote 4",
         ref: "BOD-PLE-2026-04",
         name: "Visual Guide",
-        tag: "Recommended",
+        tag: "Optional",
         covers: "A visual guide for your logo, colours, fonts and imagery, including optimisation of your existing logo",
         onceOff: 4500,
         monthly: 0

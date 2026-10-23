@@ -426,6 +426,11 @@ h1, h2, h3 {
   margin-top: 4px;
 }
 
+.pl-tag.muted {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
 .pl-tag {
   display: inline-block;
   padding: 4px 8px;
@@ -474,44 +479,23 @@ h1, h2, h3 {
   font-size: 1.05rem;
 }
 
-.client-websites-title {
-  margin: 56px 0 20px;
-  font-size: 1.3rem;
-  font-weight: 700;
+.client-card.static:hover {
+  border-color: var(--border-color);
+  transform: none;
+}
+
+.client-card-logo img {
+  width: auto;
+  max-width: 78%;
+  max-height: 56px;
+}
+
+.client-card-wordmark {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-align: center;
   color: var(--text-primary);
-}
-
-.client-websites {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.client-website {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 18px;
-  min-height: 132px;
-  padding: 22px 20px 18px;
-  border-radius: var(--radius-card);
-  border-top: 3px solid var(--accent-primary);
-  background: var(--bg-secondary);
-  transition: transform 0.2s;
-}
-
-a.client-website:hover {
-  transform: translateY(-2px);
-}
-
-.client-website-name {
-  font-size: 1.12rem;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.client-website .client-card-platform {
-  color: var(--accent-primary);
 }
 
 /* ---------- PetroLube band before the agency section ---------- */
@@ -724,8 +708,7 @@ a.client-website:hover {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
-  .pl-stats,
-  .client-websites {
+  .pl-stats {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -755,10 +738,6 @@ a.client-website:hover {
   }
 
   .pl-stats {
-    grid-template-columns: 1fr;
-  }
-
-  .client-websites {
     grid-template-columns: 1fr;
   }
 
