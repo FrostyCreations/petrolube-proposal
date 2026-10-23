@@ -40,6 +40,113 @@ h1, h2, h3 {
   letter-spacing: 0.12em;
 }
 
+/* ---------- Section nav ---------- */
+.pl-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.pl-nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  min-height: 76px;
+}
+
+.pl-nav-logo {
+  flex-shrink: 0;
+  margin-right: auto;
+}
+
+.pl-nav .pl-lockup-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.pl-nav .pl-lockup-icon img {
+  width: 34px;
+}
+
+.pl-nav .pl-lockup-text strong {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.pl-nav .pl-lockup-text small {
+  font-size: 0.6rem;
+  color: var(--accent-primary);
+}
+
+.pl-nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.pl-nav-links a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.pl-nav-links a:hover,
+.pl-nav-links a:focus-visible {
+  color: var(--accent-primary);
+}
+
+.pl-nav-cta {
+  flex-shrink: 0;
+  padding: 11px 20px;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.pl-nav-cta-short {
+  display: none;
+}
+
+/* Sections land below the sticky nav when jumped to */
+[id] {
+  scroll-margin-top: 84px;
+}
+
+@media (max-width: 1080px) {
+  .pl-nav-links {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .pl-nav-inner {
+    gap: 12px;
+    min-height: 64px;
+  }
+
+  .pl-nav .pl-lockup-text small {
+    display: none;
+  }
+
+  .pl-nav .pl-lockup-text strong {
+    font-size: 0.95rem;
+  }
+
+  .pl-nav-cta {
+    padding: 9px 12px;
+    font-size: 0.78rem;
+  }
+
+  .pl-nav-cta-full {
+    display: none;
+  }
+
+  .pl-nav-cta-short {
+    display: inline;
+  }
+}
+
 /* ---------- Shared section parts ---------- */
 .pl-section {
   padding: 110px 0 100px;

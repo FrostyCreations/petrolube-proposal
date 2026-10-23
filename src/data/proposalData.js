@@ -31,6 +31,7 @@ export const proposalData = {
     {
       type: 'Problem',
       id: 'problem',
+      navLabel: 'The Problem',
       data: {
         eyebrow: "The Problem",
         title: "Your Website Is Costing You Fuel Customers",
@@ -52,6 +53,7 @@ export const proposalData = {
     {
       type: 'Solution',
       id: 'solution',
+      navLabel: 'The Solution',
       data: {
         eyebrow: "The Solution",
         title: "A Clean, Simple Website Focused on Fuel",
@@ -71,6 +73,7 @@ export const proposalData = {
     {
       type: 'Investment',
       id: 'investment',
+      navLabel: 'Investment',
       data: {
         eyebrow: "Investment",
         title: "One Website Build, Then Simple Monthly Care",
@@ -101,6 +104,7 @@ export const proposalData = {
     {
       type: 'NextSteps',
       id: 'next-steps',
+      navLabel: 'Next Steps',
       data: {
         eyebrow: "Next Steps",
         title: "Live in About Eight Weeks",
@@ -124,6 +128,7 @@ export const proposalData = {
     {
       type: 'ClientShowcase',
       id: 'clients',
+      navLabel: 'Clients',
       data: {
         title: "Some of our Clients",
         // Websites built by Big On Digital. A card links out once its `url` is filled in,
