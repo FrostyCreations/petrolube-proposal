@@ -85,7 +85,7 @@ export const proposalData = {
           { name: "Website Care and Content", price: "R2,990", period: "per month", text: "Updates, backups, security monitoring and one optimised blog article every month." },
           { name: "Hosting", tag: "Recommended", price: "R295", period: "per month", text: "Fast South African hosting with SSL, caching and a CDN. Once-off set-up of R890, including your email records." }
         ],
-        optional: { name: "Visual Guide", tag: "Optional", price: "R4,500", period: "once-off", text: "Optimisation of your existing logo, plus a short guide for colours, fonts and imagery." }
+        optional: { name: "Visual Guide", tag: "Recommended", price: "R4,500", period: "once-off", text: "Optimisation of your existing logo, plus a short guide for colours, fonts and imagery." }
       }
     },
 
@@ -209,7 +209,7 @@ export const proposalData = {
         number: "Quote 4",
         ref: "BOD-PLE-2026-04",
         name: "Visual Guide",
-        tag: "Optional",
+        tag: "Recommended",
         covers: "A visual guide for your logo, colours, fonts and imagery, including optimisation of your existing logo",
         onceOff: 4500,
         monthly: 0

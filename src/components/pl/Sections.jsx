@@ -104,7 +104,7 @@ export const Investment = memo(({ data }) => (
           ))}
           <article className="pl-invest-row optional">
             <div>
-              <h3 className="pl-invest-row-name">{data.optional.name}<span className="pl-tag muted">{data.optional.tag}</span></h3>
+              <h3 className="pl-invest-row-name">{data.optional.name}<span className="pl-tag">{data.optional.tag}</span></h3>
               <p className="pl-invest-row-text">{data.optional.text}</p>
             </div>
             <p className="pl-invest-row-price">{data.optional.price}<small>{data.optional.period}</small></p>

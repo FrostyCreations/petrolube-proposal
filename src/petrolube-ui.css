@@ -426,11 +426,6 @@ h1, h2, h3 {
   margin-top: 4px;
 }
 
-.pl-tag.muted {
-  background: var(--bg-tertiary);
-  color: var(--text-secondary);
-}
-
 .pl-tag {
   display: inline-block;
   padding: 4px 8px;
