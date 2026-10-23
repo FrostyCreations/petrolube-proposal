@@ -86,7 +86,7 @@ export const proposalData = {
             "Catalogue of up to 60 products with Request a Quote buttons",
             "Quote and contact forms routed to the right person",
             "Solar content removed, with redirects to keep your Google traffic",
-            "Foundational SEO and AEO, launch and training"
+            "Foundational SEO and AEO, testing and launch"
           ],
           note: "50% deposit to book, balance before go-live"
         },
@@ -129,8 +129,8 @@ export const proposalData = {
         // Websites built by Big On Digital. A card links out once its `url` is filled in,
         // and shows the name as lettering until a `logoUrl` is added.
         clients: [
-          { name: "Ferris Workshop", tagline: "Supercar Service and Repair Specialists", logoUrl: "clients/ferris-group.webp", platform: "Website", url: "https://ferriscars.com/" },
           { name: "Kulani Collective", tagline: "Website Design and Copy", logoUrl: "clients/kulani-collective.svg", platform: "Website", url: "https://www.kulanicollective.org/" },
+          { name: "Ferris Workshop", tagline: "Supercar Service and Repair Specialists", logoUrl: "clients/ferris-group.webp", platform: "Website", url: "https://ferriscars.com/" },
           { name: "WHT Electrical", tagline: "Electrical, Solar, Plumbing and Maintenance", logoUrl: "clients/wht-electrical.svg", platform: "Website", url: "https://whtelectrical.co.za/" },
           { name: "Supercar Rhino Run", tagline: "Record-Breaking Supercar Charity Convoy", logoUrl: "clients/supercar-rhino-run.webp", platform: "Website", url: "https://rhinorun.co.za/" }
         ]
