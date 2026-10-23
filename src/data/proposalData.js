@@ -6,18 +6,18 @@ export const proposalData = {
   client: {
     "name": "PetroLube Energy",
     "tagline": "Fuel · Fluids · Asset Reliability",
-    "iconUrl": "/pl/petrolube-icon.webp"
+    "iconUrl": "pl/petrolube-icon.webp"
   },
   agency: {
     "name": "Big On Digital",
     "contactEmail": "hello@bigondigital.co.za",
-    "logoUrl": "/big-on-digital-logo-dark.webp"
+    "logoUrl": "big-on-digital-logo-dark.webp"
   },
   hero: {
     "eyebrow": "Website Proposal",
     "title": "PetroLube Energy",
-    "banner": { "text": "Website Proposal by", "agency": "Big On Digital", "logoUrl": "/big-on-digital-logo-dark.webp" },
-    "heroBgUrl": "/pl/fuel-hero.webp"
+    "banner": { "text": "Website Proposal by", "agency": "Big On Digital", "logoUrl": "big-on-digital-logo-dark.webp" },
+    "heroBgUrl": "pl/fuel-hero.webp"
   },
   sections: [
     {
@@ -48,7 +48,7 @@ export const proposalData = {
         eyebrow: "The Solution",
         title: "A Clean, Simple Website Focused on Fuel",
         intro: "Clean and simple, like the cfsolution.co.za site Keith likes, with a quote button on every product. There is no online shop.",
-        concept: { imageUrl: "/pl/homepage-concept.webp", caption: "Homepage concept for the new website" },
+        concept: { imageUrl: "pl/homepage-concept.webp", caption: "Homepage concept for the new website" },
         features: [
           { label: "Products", title: "A clear product catalogue", text: "Tanks, dispensers, mobile filling stations, fluid handling, AdBlue and fleet monitoring, each with a photo and key specifications." },
           { label: "Quotes", title: "Request a Quote on every product", text: "The form fills in the product for the buyer and sends the enquiry to the right person, by email or WhatsApp." },
@@ -118,10 +118,10 @@ export const proposalData = {
       data: {
         title: "Some of our Clients",
         clients: [
-          { name: "Ferris Cars", tagline: "Luxury Performance Automotive Group", logoUrl: "/clients/ferris-group.webp", platform: "Facebook", url: "https://www.facebook.com/ferriscarssa/" },
-          { name: "WorkPods", tagline: "Entrepreneurial Business Growth Campus", logoUrl: "/clients/workpods.webp", platform: "Instagram", url: "https://www.instagram.com/workpodscommunity/" },
-          { name: "Century 21 Wildlife", tagline: "Luxury Bushveld Property Experts", logoUrl: "/clients/century21-wildlife.webp", platform: "Website", url: "https://www.century21wildlife.co.za/" },
-          { name: "Cashbox Global", tagline: "Private Structured Investment Specialists", logoUrl: "/clients/cashbox-global.webp", platform: "LinkedIn", url: "https://www.linkedin.com/company/cashbox-global/" }
+          { name: "Ferris Cars", tagline: "Luxury Performance Automotive Group", logoUrl: "clients/ferris-group.webp", platform: "Facebook", url: "https://www.facebook.com/ferriscarssa/" },
+          { name: "WorkPods", tagline: "Entrepreneurial Business Growth Campus", logoUrl: "clients/workpods.webp", platform: "Instagram", url: "https://www.instagram.com/workpodscommunity/" },
+          { name: "Century 21 Wildlife", tagline: "Luxury Bushveld Property Experts", logoUrl: "clients/century21-wildlife.webp", platform: "Website", url: "https://www.century21wildlife.co.za/" },
+          { name: "Cashbox Global", tagline: "Private Structured Investment Specialists", logoUrl: "clients/cashbox-global.webp", platform: "LinkedIn", url: "https://www.linkedin.com/company/cashbox-global/" }
         ],
         // Websites built by Big On Digital. Add each site's address to `url` to make its card a link.
         websitesTitle: "Websites We’ve Built",
@@ -155,21 +155,21 @@ export const proposalData = {
             title: "Founder & Strategic Director",
             subtitle: "Growth & Strategy",
             description: "Dominique defines the vision behind every project, guiding brand positioning, marketing strategy, and long-term growth. She works closely with clients to translate ambition into structured digital direction that delivers measurable results.",
-            image: "/team/dominique.jpg"
+            image: "team/dominique.jpg"
           },
           {
             name: "Francois",
             title: "Creative & AI Lead",
             subtitle: "Content, Design & Innovation",
             description: "Francois leads creative execution while driving the integration of AI across content and workflows. He shapes how ideas come to life, from social media and design to intelligent content systems, ensuring the brand remains both relevant and forward-thinking.",
-            image: "/team/francois.jpg"
+            image: "team/francois.jpg"
           },
           {
             name: "Andy",
             title: "Technical & Performance Lead",
             subtitle: "Development & Paid Media",
             description: "Andy owns the technical and performance layer of the agency. From website development to paid advertising and tracking, he ensures every campaign is built on strong systems and optimised for results.",
-            image: "/team/andy.jpg"
+            image: "team/andy.jpg"
           }
         ]
       }
