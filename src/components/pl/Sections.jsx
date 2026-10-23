@@ -94,7 +94,7 @@ export const Investment = memo(({ data }) => (
         <div className="pl-invest-monthly">
           <span className="pl-invest-label dark">Monthly services</span>
           {data.monthly.map(item => (
-            <article key={item.name} className="pl-invest-row">
+            <article key={item.name} className={`pl-invest-row${item.tag ? ' boxed' : ''}`}>
               <div>
                 <h3 className="pl-invest-row-name">{item.name}{item.tag && <span className="pl-tag">{item.tag}</span>}</h3>
                 <p className="pl-invest-row-text">{item.text}</p>
@@ -102,7 +102,7 @@ export const Investment = memo(({ data }) => (
               <p className="pl-invest-row-price">{item.price}<small>{item.period}</small></p>
             </article>
           ))}
-          <article className="pl-invest-row optional">
+          <article className="pl-invest-row boxed">
             <div>
               <h3 className="pl-invest-row-name">{data.optional.name}<span className="pl-tag">{data.optional.tag}</span></h3>
               <p className="pl-invest-row-text">{data.optional.text}</p>

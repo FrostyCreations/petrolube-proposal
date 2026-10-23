@@ -384,12 +384,17 @@ h1, h2, h3 {
   border-top: 1px solid var(--border-color);
 }
 
-.pl-invest-row.optional {
+/* Recommended items share the green dashed box and sit together at the bottom */
+.pl-invest-row.boxed {
   margin-top: auto;
   padding: 20px;
   border: 1px dashed rgba(0, 136, 72, 0.4);
   border-radius: 8px;
   background: #f4fbf7;
+}
+
+.pl-invest-row.boxed + .pl-invest-row.boxed {
+  margin-top: 0;
 }
 
 .pl-invest-row-name {
