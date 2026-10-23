@@ -134,8 +134,8 @@ export const proposalData = {
         // Websites built by Big On Digital. A card links out once its `url` is filled in,
         // and shows the name as lettering until a `logoUrl` is added.
         clients: [
-          { name: "Kulani Collective", tagline: "Website Design and Copy", logoUrl: "clients/kulani-collective.svg", platform: "Website", url: "https://www.kulanicollective.org/" },
           { name: "Ferris Workshop", tagline: "Supercar Service and Repair Specialists", logoUrl: "clients/ferris-workshop.webp", platform: "Website", url: "https://ferrisworkshop.com/" },
+          { name: "Kulani Collective", tagline: "Website Design and Copy", logoUrl: "clients/kulani-collective.svg", platform: "Website", url: "https://www.kulanicollective.org/" },
           { name: "WHT Electrical", tagline: "Electrical, Solar, Plumbing and Maintenance", logoUrl: "clients/wht-electrical.svg", platform: "Website", url: "https://whtelectrical.co.za/" },
           { name: "Supercar Rhino Run", tagline: "Record-Breaking Supercar Charity Convoy", logoUrl: "clients/supercar-rhino-run.webp", platform: "Website", url: "https://rhinorun.co.za/" }
         ]
