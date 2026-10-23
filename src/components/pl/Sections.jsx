@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { Check } from 'lucide-react';
+import { Check, ArrowUpRight } from 'lucide-react';
 import '../dealer/dealer.css';
 
 // Section eyebrow with the short green rule, as used across the proposal
@@ -74,6 +74,13 @@ export const Solution = memo(({ data }) => (
   </section>
 ));
 
+// Opens the matching Zoho estimate in a new tab
+const QuoteLink = ({ href, light }) => href ? (
+  <a href={href} target="_blank" rel="noopener noreferrer" className={`pl-quote-link${light ? ' light' : ''}`}>
+    View quote <ArrowUpRight size={14} />
+  </a>
+) : null;
+
 // Website build and monthly services shown side by side, with the optional visual guide below
 export const Investment = memo(({ data }) => (
   <section className="pl-section alt">
@@ -89,7 +96,7 @@ export const Investment = memo(({ data }) => (
               <li key={item}><Check size={16} />{item}</li>
             ))}
           </ul>
-          <p className="pl-invest-note">{data.build.note}</p>
+          <p className="pl-invest-note">{data.build.note}<QuoteLink href={data.build.quoteUrl} light /></p>
         </article>
         <div className="pl-invest-monthly">
           <span className="pl-invest-label dark">Monthly services</span>
@@ -98,6 +105,7 @@ export const Investment = memo(({ data }) => (
               <div>
                 <h3 className="pl-invest-row-name">{item.name}{item.tag && <span className="pl-tag">{item.tag}</span>}</h3>
                 <p className="pl-invest-row-text">{item.text}</p>
+                <QuoteLink href={item.quoteUrl} />
               </div>
               <p className="pl-invest-row-price">{item.price}<small>{item.period}</small></p>
             </article>
@@ -106,6 +114,7 @@ export const Investment = memo(({ data }) => (
             <div>
               <h3 className="pl-invest-row-name">{data.optional.name}<span className="pl-tag">{data.optional.tag}</span></h3>
               <p className="pl-invest-row-text">{data.optional.text}</p>
+              <QuoteLink href={data.optional.quoteUrl} />
             </div>
             <p className="pl-invest-row-price">{data.optional.price}<small>{data.optional.period}</small></p>
           </article>

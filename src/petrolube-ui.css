@@ -445,6 +445,33 @@ h1, h2, h3 {
   vertical-align: middle;
 }
 
+/* ---------- Links to the Zoho estimates ---------- */
+.pl-quote-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.pl-quote-link:hover {
+  color: var(--accent-hover);
+}
+
+.pl-quote-link.light {
+  display: flex;
+  width: fit-content;
+  color: var(--mint);
+}
+
+.pl-quote-link.light:hover {
+  color: #ffffff;
+}
+
 /* ---------- Approve call to action ---------- */
 .approve-cta {
   padding: 100px 0;

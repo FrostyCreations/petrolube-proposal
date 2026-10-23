@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useEditor } from '../context/EditorContext';
 import { Link } from 'react-router-dom';
-import { ChevronLeft, CheckCircle2, FileText } from 'lucide-react';
+import { ChevronLeft, CheckCircle2, FileText, ArrowUpRight } from 'lucide-react';
 import Footer from '../components/Footer';
 import ProposalBanner from '../components/dealer/ProposalBanner';
 import './QuotesPage.css';
@@ -57,6 +57,7 @@ const QuotesPage = () => {
     chosen.forEach(q => {
       const prices = priceLines(q).map(p => `${p.amount} ${p.period}`).join(' + ');
       lines.push(`- ${q.number} ${q.name} (${q.ref}): ${prices}`);
+      if (q.estimateUrl) lines.push(`  Quote: ${q.estimateUrl}`);
     });
     lines.push('');
     if (onceOffTotal) {
@@ -132,6 +133,12 @@ const QuotesPage = () => {
                           {q.tag && <span className="pl-tag">{q.tag}</span>}
                         </span>
                         <span className="quote-option-detail">{q.covers}</span>
+                        {q.estimateUrl && (
+                          // stopPropagation keeps a click on the link from ticking the box
+                          <a href={q.estimateUrl} target="_blank" rel="noopener noreferrer" className="pl-quote-link" onClick={e => e.stopPropagation()}>
+                            View quote <ArrowUpRight size={14} />
+                          </a>
+                        )}
                       </span>
                       <span className="quote-option-prices">
                         {priceLines(q).map(p => (

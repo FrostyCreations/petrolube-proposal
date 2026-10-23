@@ -2,6 +2,14 @@
 // Copy follows the approved short proposal. Prices match the PetroLube Energy Quotes
 // (BOD-PLE-2026-01 to 04) and all exclude VAT.
 
+// Zoho Books estimates the client can open, one per quote
+const ESTIMATES = {
+  website: "https://zohosecurepay.com/books/bigondigital/secure?CEstimateID=2-34bc0b1ac6b2669484c311a5312aaeb63fccae5aa0dda56949c7d6d85168f1a407822c23fa6afe13f0fc5ac66f7360f7642c3b5d8d980fd3e87edfb18cb303b711e80a707f5b3196",
+  care: "https://zohosecurepay.com/books/bigondigital/secure?CEstimateID=2-34bc0b1ac6b2669484c311a5312aaeb6f195cfa231e282151f8d84e2d49dfd89c1d458bc427f7b1af0fc5ac66f7360f7642c3b5d8d980fd3e87edfb18cb303b711e80a707f5b3196",
+  hosting: "https://zohosecurepay.com/books/bigondigital/secure?CEstimateID=2-34bc0b1ac6b2669484c311a5312aaeb603ad15c958f6c9fef2699abfbe6e49ddb3ddf2723b142d97f0fc5ac66f7360f7642c3b5d8d980fd3e87edfb18cb303b711e80a707f5b3196",
+  visualGuide: "https://zohosecurepay.com/books/bigondigital/secure?CEstimateID=2-34bc0b1ac6b2669484c311a5312aaeb6df3021af7286ccf7fff433a0425750a6457370bc709a69e5f0fc5ac66f7360f7642c3b5d8d980fd3e87edfb18cb303b711e80a707f5b3196"
+};
+
 export const proposalData = {
   client: {
     "name": "PetroLube Energy",
@@ -68,6 +76,7 @@ export const proposalData = {
         title: "One Website Build, Then Simple Monthly Care",
         intro: "All prices exclude VAT. The website build is a once-off cost, and the monthly services start in the month the new website goes live.",
         build: {
+          quoteUrl: ESTIMATES.website,
           label: "Website build",
           name: "New Website",
           price: "R36,000",
@@ -82,10 +91,10 @@ export const proposalData = {
           note: "50% deposit to book, balance before go-live"
         },
         monthly: [
-          { name: "Website Care and Content", price: "R2,990", period: "per month", text: "Updates, backups, security monitoring and one optimised blog article every month." },
-          { name: "Hosting", tag: "Recommended", price: "R295", period: "per month", text: "Fast South African hosting with SSL, caching and a CDN. Once-off set-up of R890, including your email records." }
+          { name: "Website Care and Content", quoteUrl: ESTIMATES.care, price: "R2,990", period: "per month", text: "Updates, backups, security monitoring and one optimised blog article every month." },
+          { name: "Hosting", tag: "Recommended", quoteUrl: ESTIMATES.hosting, price: "R295", period: "per month", text: "Fast South African hosting with SSL, caching and a CDN. Once-off set-up of R890, including your email records." }
         ],
-        optional: { name: "Visual Guide", tag: "Recommended", price: "R4,500", period: "once-off", text: "Optimisation of your existing logo, plus a short guide for colours, fonts and imagery." }
+        optional: { name: "Visual Guide", tag: "Recommended", quoteUrl: ESTIMATES.visualGuide, price: "R4,500", period: "once-off", text: "Optimisation of your existing logo, plus a short guide for colours, fonts and imagery." }
       }
     },
 
@@ -178,6 +187,7 @@ export const proposalData = {
     quotes: [
       {
         id: 'website',
+        estimateUrl: ESTIMATES.website,
         number: "Quote 1",
         ref: "BOD-PLE-2026-01",
         name: "New Website",
@@ -187,6 +197,7 @@ export const proposalData = {
       },
       {
         id: 'care',
+        estimateUrl: ESTIMATES.care,
         number: "Quote 2",
         ref: "BOD-PLE-2026-02",
         name: "Website Care and Content",
@@ -196,6 +207,7 @@ export const proposalData = {
       },
       {
         id: 'hosting',
+        estimateUrl: ESTIMATES.hosting,
         number: "Quote 3",
         ref: "BOD-PLE-2026-03",
         name: "Hosting",
@@ -206,6 +218,7 @@ export const proposalData = {
       },
       {
         id: 'visual-guide',
+        estimateUrl: ESTIMATES.visualGuide,
         number: "Quote 4",
         ref: "BOD-PLE-2026-04",
         name: "Visual Guide",
