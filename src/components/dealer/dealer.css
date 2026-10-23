@@ -1,0 +1,850 @@
+/* Dealer proposal sections, styled after the OMODA | JAECOO dealer site elements */
+
+/* ---------- Dealer logo ---------- */
+.brand-logo {
+  display: block;
+  height: 46px;
+  width: auto;
+}
+
+.brand-logo.inverted {
+  height: 34px;
+}
+
+/* ---------- Shared type ---------- */
+.dealer-section {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dealer-section.alt {
+  background: var(--bg-secondary);
+}
+
+.dealer-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.dealer-eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+}
+
+.dealer-eyebrow.light {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.dealer-title {
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.dealer-subheading {
+  margin: 72px 0 24px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+}
+
+.dealer-body {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+}
+
+.dealer-note {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0 0 12px;
+  padding-left: 14px;
+  border-left: 2px solid var(--accent-secondary);
+}
+
+.dealer-list {
+  margin: 8px 0 22px;
+}
+
+.dealer-list-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.dealer-list ul {
+  display: grid;
+  gap: 8px;
+}
+
+.dealer-list li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.dealer-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 10px;
+  height: 1px;
+  background: var(--accent-primary);
+}
+
+/* ---------- Hero: full-bleed photo ---------- */
+.dealer-hero {
+  position: relative;
+  margin-top: calc(var(--nav-height) + var(--banner-height));
+  height: min(78vh, 720px);
+  min-height: 460px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.dealer-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dealer-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(31, 31, 46, 0.75) 0%, rgba(31, 31, 46, 0.2) 55%, transparent 100%);
+}
+
+.dealer-hero-content {
+  position: relative;
+  width: 100%;
+  padding-bottom: 72px;
+}
+
+.dealer-hero-title {
+  color: #ffffff;
+  font-size: clamp(1.8rem, 4.6vw, 3.6rem);
+  line-height: 1.2;
+  max-width: 900px;
+}
+
+/* ---------- Two-column layout ---------- */
+.dealer-split {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.dealer-split.image-first {
+  grid-template-columns: 1fr 1.15fr;
+}
+
+.dealer-split.image-first .model-card {
+  order: -1;
+}
+
+/* ---------- Model card: gradient panel + charcoal bar ---------- */
+.model-card {
+  position: sticky;
+  top: calc(var(--nav-height) + var(--banner-height) + 24px);
+}
+
+.model-card-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-card) var(--radius-card) 0 0;
+  overflow: hidden;
+  background: linear-gradient(160deg, #eef2f4 0%, #dfe6ea 100%);
+}
+
+.model-card-media:last-child {
+  border-radius: var(--radius-card);
+}
+
+.model-card-img {
+  position: absolute;
+  inset: 0;
+  min-height: 0;
+}
+
+.model-card-img .optimized-image {
+  object-fit: cover;
+}
+
+/* Studio cut-outs (white background) sit on the grey panel like the dealer's range cards */
+.model-card-media.contain .optimized-image {
+  object-fit: contain;
+  padding: 8%;
+  mix-blend-mode: multiply;
+}
+
+.model-card-media.contain .image-container {
+  background: transparent;
+}
+
+.model-card-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 20px 14px;
+  background: var(--dark-surface);
+  border-radius: 0 0 var(--radius-button) var(--radius-button);
+  text-align: center;
+}
+
+.model-card-price {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.model-card-price.secondary {
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.model-card-amount {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+}
+
+.model-card-price.secondary .model-card-amount {
+  font-size: 1rem;
+}
+
+.model-card-caption {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--accent-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ---------- Service ---------- */
+.service-subtitle {
+  font-family: var(--font-main);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.sub-service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.sub-service {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-card) var(--radius-card) var(--radius-button) var(--radius-button);
+  background: linear-gradient(160deg, #f4f6f7 0%, #e7edf0 100%);
+  overflow: hidden;
+}
+
+.dealer-section.alt .sub-service {
+  background: #ffffff;
+}
+
+.sub-service-body {
+  flex: 1;
+  padding: 28px 28px 12px;
+}
+
+.sub-service-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.service-footnote {
+  margin-top: 32px;
+}
+
+/* ---------- Objectives: spec strip tiles ---------- */
+.spec-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  list-style: none;
+}
+
+.spec-tile {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--bg-secondary);
+}
+
+.spec-tile-index {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: #ffffff;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.spec-tile-text {
+  font-size: 0.98rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* ---------- Part header: photo band ---------- */
+.part-header {
+  position: relative;
+  min-height: 280px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--dark-surface);
+}
+
+.part-header-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.part-header-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(31, 31, 46, 0.85) 0%, rgba(31, 31, 46, 0.45) 60%, rgba(31, 31, 46, 0.2) 100%);
+}
+
+.part-header-content {
+  position: relative;
+  width: 100%;
+  padding-top: 56px;
+  padding-bottom: 48px;
+}
+
+.part-header-title {
+  color: #ffffff;
+  font-size: clamp(1.6rem, 3.4vw, 2.8rem);
+  max-width: 820px;
+}
+
+/* ---------- Spec sheet (tables) ---------- */
+.spec-sheet {
+  border-radius: var(--radius-card);
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.spec-sheet-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.spec-sheet-row:first-child {
+  border-top: none;
+}
+
+.spec-sheet-row.head {
+  background: var(--bg-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.spec-sheet-row.total {
+  background: var(--dark-surface);
+  color: #ffffff;
+  font-weight: 600;
+  border-top: none;
+}
+
+.spec-sheet-amount {
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.spec-sheet.compact .spec-sheet-row {
+  padding: 12px 18px;
+  font-size: 0.92rem;
+}
+
+.spec-sheet.compact .spec-sheet-amount {
+  font-size: 0.82rem;
+}
+
+.summary-section .spec-sheet {
+  max-width: 760px;
+}
+
+.summary-note {
+  max-width: 760px;
+  margin-top: 24px;
+}
+
+/* ---------- Packages ---------- */
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.package-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-card) var(--radius-card) var(--radius-button) var(--radius-button);
+  background: linear-gradient(160deg, #f4f6f7 0%, #e7edf0 100%);
+  border: 1px solid transparent;
+}
+
+.package-card.featured {
+  border-color: var(--dark-surface);
+  box-shadow: 0 0 0 1px var(--dark-surface);
+}
+
+.package-head {
+  padding: 28px 24px 8px;
+  background-image:
+    linear-gradient(115deg, transparent 70%, rgba(255, 255, 255, 0.8) 70%, rgba(255, 255, 255, 0.8) 76%, transparent 76%),
+    linear-gradient(115deg, transparent 80%, rgba(255, 255, 255, 0.6) 80%, rgba(255, 255, 255, 0.6) 84%, transparent 84%);
+}
+
+.package-name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.35;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.package-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.package-body {
+  flex: 1;
+  padding: 16px 16px 20px;
+}
+
+.package-media {
+  margin: 16px 4px 0;
+}
+
+/* ---------- Optional services: collapsed rows ---------- */
+.dealer-section.service.collapsed {
+  padding: 40px 0;
+}
+
+.service-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.service-toggle-title {
+  margin-bottom: 8px;
+}
+
+.service-toggle-subtitle {
+  margin-bottom: 0;
+}
+
+.service-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.service-toggle.hide {
+  margin-top: 40px;
+}
+
+/* ---------- Closing call to action ---------- */
+.approve-cta {
+  text-align: center;
+  background: var(--bg-secondary);
+}
+
+.approve-cta-button {
+  gap: 10px;
+  font-size: 1.05rem;
+  padding: 16px 36px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .dealer-split,
+  .dealer-split.image-first {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .dealer-split .model-card,
+  .dealer-split.image-first .model-card {
+    order: -1;
+    position: static;
+  }
+
+  .package-grid,
+  .spec-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1024px) {
+  .spec-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .dealer-section {
+    padding: 64px 0;
+  }
+
+  .service-toggle-row {
+    gap: 24px;
+  }
+
+  .service-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .spec-sheet-row {
+    padding: 14px 16px;
+  }
+}
+
+/* ---------- Big On Digital bands (agency orange from the BoD logo) ---------- */
+.agency-band {
+  background: var(--agency-orange);
+  color: var(--dark-surface-2);
+}
+
+.proposal-banner {
+  padding: 20px 0;
+}
+
+.proposal-banner-text {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(0.85rem, 1.6vw, 1.05rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dark-surface-2);
+}
+
+.proposal-banner-text strong {
+  font-weight: 400;
+  border-bottom: 2px solid currentColor;
+}
+
+.dealer-eyebrow.dark {
+  color: var(--dark-surface-2);
+}
+
+.about-agency {
+  padding: 96px 0;
+}
+
+.about-agency-title {
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+  color: var(--dark-surface-2);
+  margin-bottom: 28px;
+}
+
+.about-agency-text {
+  max-width: 760px;
+}
+
+.about-agency-text p {
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: var(--dark-surface-2);
+  margin-bottom: 16px;
+}
+
+.about-agency-text p:last-child {
+  font-weight: 600;
+}
+
+.team-grid-dealer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-card);
+  background: var(--dark-surface-2);
+  overflow: hidden;
+}
+
+.team-card-photo {
+  position: relative;
+  aspect-ratio: 1 / 1;
+}
+
+.team-card-img {
+  position: absolute;
+  inset: 0;
+  min-height: 0;
+}
+
+.team-card-img .optimized-image {
+  object-fit: cover;
+}
+
+.team-card-body {
+  padding: 24px 24px 28px;
+  text-align: center;
+}
+
+.team-card-name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.team-card-title {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.team-card-subtitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--agency-orange);
+  margin-bottom: 16px;
+}
+
+.team-card-desc {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.78);
+  text-align: left;
+}
+
+/* ---------- Some of our Clients ---------- */
+.client-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.client-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-card) var(--radius-card) var(--radius-button) var(--radius-button);
+  border: 1px solid var(--border-color);
+  background: #ffffff;
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.client-card:hover {
+  border-color: var(--dark-surface);
+  transform: translateY(-2px);
+}
+
+.client-card-logo {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  padding: 12px;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.client-card-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.client-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 20px;
+}
+
+.client-card-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.client-card-tagline {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.client-card-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: var(--dark-surface);
+  color: #ffffff;
+}
+
+.client-card-platform {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1024px) {
+  .team-grid-dealer {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+
+  .client-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .client-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ---------- Dealer band: closes the proposal before the agency section ---------- */
+.brand-band {
+  background: var(--dark-surface);
+  padding: 40px 0;
+}
+
+.brand-band-inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.brand-band-rule {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* ---------- Agency logo in the orange bars ---------- */
+.agency-logo {
+  height: 32px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+.proposal-banner-inner,
+.footer-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .proposal-banner {
+    padding: 12px 0;
+  }
+
+  .proposal-banner-inner {
+    flex-wrap: nowrap;
+    gap: 12px;
+  }
+
+  .proposal-banner-text {
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+  }
+
+  .agency-logo {
+    height: 24px;
+  }
+}
+
+/* Whole-image cards (screenshots that must not be cropped) */
+.model-card-media.fit-whole {
+  background: #ffffff;
+}
+
+.model-card-media.fit-whole .optimized-image {
+  object-fit: contain;
+  padding: 10px;
+}

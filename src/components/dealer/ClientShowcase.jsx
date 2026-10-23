@@ -1,0 +1,80 @@
+import { memo } from 'react';
+import { Facebook, Instagram, Linkedin, Youtube, Globe, ArrowUpRight } from 'lucide-react';
+import './dealer.css';
+
+// Lucide has no TikTok mark, so it is drawn here at the same 24px grid
+const TikTok = ({ size = 18 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.59 2.59 0 0 1-2.59-2.59 2.59 2.59 0 0 1 3.33-2.48V9.68a5.68 5.68 0 0 0-.74-.05A5.68 5.68 0 0 0 4.18 15.3 5.68 5.68 0 0 0 9.86 21a5.68 5.68 0 0 0 5.68-5.68V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3a4.3 4.3 0 0 1-3.24-1.48z" />
+  </svg>
+);
+
+const PLATFORM_ICONS = {
+  Facebook: Facebook,
+  Instagram: Instagram,
+  TikTok: TikTok,
+  LinkedIn: Linkedin,
+  YouTube: Youtube,
+  Website: Globe
+};
+
+const ClientShowcase = ({ data }) => (
+  <section className="dealer-section clients-section">
+    <div className="container">
+      <h2 className="dealer-title">{data.title}</h2>
+      <div className="client-grid">
+        {data.clients.map((client) => {
+          const Icon = PLATFORM_ICONS[client.platform];
+          return (
+            <a
+              key={client.name}
+              href={client.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="client-card"
+            >
+              <div className="client-card-logo">
+                <img src={client.logoUrl} alt={client.name} loading="lazy" />
+              </div>
+              <div className="client-card-body">
+                <span className="client-card-name">{client.name}</span>
+                <span className="client-card-tagline">{client.tagline}</span>
+              </div>
+              <div className="client-card-bar">
+                <span className="client-card-platform">
+                  {Icon && <Icon size={18} />}
+                  {client.platform}
+                </span>
+                <ArrowUpRight size={18} />
+              </div>
+            </a>
+          );
+        })}
+      </div>
+
+      {data.websites?.length > 0 && (
+        <>
+          <h3 className="client-websites-title">{data.websitesTitle}</h3>
+          <div className="client-websites">
+            {data.websites.map((site) => {
+              const body = (
+                <>
+                  <span className="client-website-name">{site.name}</span>
+                  <span className="client-card-platform"><Globe size={18} />Website{site.url && <ArrowUpRight size={16} />}</span>
+                </>
+              );
+              // A card only links out once the site's address has been added
+              return site.url ? (
+                <a key={site.name} href={site.url} target="_blank" rel="noopener noreferrer" className="client-website">{body}</a>
+              ) : (
+                <div key={site.name} className="client-website">{body}</div>
+              );
+            })}
+          </div>
+        </>
+      )}
+    </div>
+  </section>
+);
+
+export default memo(ClientShowcase);

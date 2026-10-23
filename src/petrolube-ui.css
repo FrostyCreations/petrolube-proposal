@@ -1,0 +1,782 @@
+/*
+ * PetroLube Energy skin for the shared proposal template.
+ * Loaded after every component stylesheet. Montserrat throughout, navy panels,
+ * green buttons and mint highlights taken from the PetroLube Energy logo.
+ */
+
+/* ---------- Headings: bold Montserrat in title case ---------- */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+/* ---------- Buttons: squared corners, flat green ---------- */
+.btn-primary,
+.btn-secondary {
+  border-radius: var(--radius-button);
+  padding: 14px 32px;
+  border: 1px solid var(--accent-primary);
+  box-shadow: none;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  transform: none;
+  box-shadow: none;
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+/* ---------- Orange agency banner (not fixed on this proposal) ---------- */
+.proposal-banner {
+  padding: 22px 0;
+}
+
+.proposal-banner-text {
+  font-weight: 700;
+  font-size: clamp(0.82rem, 1.5vw, 1.02rem);
+  letter-spacing: 0.12em;
+}
+
+/* ---------- Shared section parts ---------- */
+.pl-section {
+  padding: 110px 0 100px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.pl-section.alt {
+  background: var(--bg-secondary);
+}
+
+.pl-section.dark {
+  background: var(--dark-surface);
+  border-bottom: 0;
+}
+
+.pl-head {
+  margin-bottom: 40px;
+}
+
+.pl-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.pl-eyebrow::before {
+  content: '';
+  width: 30px;
+  height: 1px;
+  background: var(--accent-primary);
+}
+
+.pl-eyebrow.light {
+  color: var(--mint);
+}
+
+.pl-eyebrow.light::before {
+  background: var(--mint);
+}
+
+.pl-title {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.pl-section.dark .pl-title {
+  color: #ffffff;
+}
+
+.pl-intro {
+  max-width: 780px;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+.pl-section.dark .pl-intro {
+  color: #c3cdd6;
+}
+
+/* ---------- Hero: full-bleed fuel photo ---------- */
+.pl-hero {
+  position: relative;
+  min-height: 540px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: #000000;
+}
+
+.pl-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pl-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.15) 60%, transparent 100%);
+}
+
+.pl-hero-content {
+  position: relative;
+  width: 100%;
+  padding-bottom: 64px;
+}
+
+.pl-hero-content .pl-eyebrow {
+  margin-bottom: 18px;
+}
+
+.pl-hero-title {
+  font-size: clamp(2.4rem, 5vw, 3.7rem);
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- Problem: navy stat tiles ---------- */
+.pl-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.pl-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 26px 22px 24px;
+  border-radius: var(--radius-card);
+  background: var(--dark-surface);
+}
+
+.pl-stat-value {
+  font-size: 2.3rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--mint);
+}
+
+.pl-stat-label {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: #c3cdd6;
+}
+
+/* ---------- Cards with a green top edge ---------- */
+.pl-cards {
+  display: grid;
+  gap: 20px;
+}
+
+.pl-cards.three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.pl-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 30px 24px 32px;
+  border-radius: var(--radius-card);
+  border-top: 3px solid var(--accent-primary);
+  background: var(--bg-secondary);
+}
+
+.pl-card-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent-primary);
+}
+
+.pl-card-label.word {
+  letter-spacing: 0.06em;
+  font-size: 0.92rem;
+}
+
+.pl-card-label.caps {
+  text-transform: uppercase;
+}
+
+.pl-card-title {
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.pl-card-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.pl-card.dark {
+  background: var(--dark-card);
+  border-top-color: var(--mint);
+}
+
+.pl-card.dark .pl-card-label {
+  color: var(--mint);
+}
+
+.pl-card.dark .pl-card-title {
+  color: #ffffff;
+}
+
+.pl-card.dark .pl-card-text {
+  color: #c3cdd6;
+}
+
+/* ---------- Solution: homepage concept in a browser frame ---------- */
+.pl-browser {
+  margin: 8px 0 48px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 20px 50px rgba(7, 26, 43, 0.1);
+}
+
+.pl-browser-bar {
+  display: flex;
+  gap: 7px;
+  padding: 12px 16px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.pl-browser-bar span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #c8d1da;
+}
+
+.pl-browser-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1440 / 1000;
+  object-fit: cover;
+  object-position: top;
+}
+
+.pl-browser-caption {
+  padding: 16px 20px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-color);
+}
+
+/* ---------- Investment: build and monthly side by side ---------- */
+.pl-invest {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.pl-invest-build {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 34px 32px;
+  border-radius: var(--radius-card);
+  border-top: 3px solid var(--mint);
+  background: var(--dark-surface);
+  color: #ffffff;
+}
+
+.pl-invest-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mint);
+}
+
+.pl-invest-label.dark {
+  color: var(--accent-primary);
+  margin-bottom: 4px;
+}
+
+.pl-invest-name {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.pl-invest-price {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--mint);
+  margin: 4px 0 8px;
+}
+
+.pl-invest-price small,
+.pl-invest-row-price small {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #c3cdd6;
+}
+
+.pl-invest-list {
+  display: grid;
+  gap: 10px;
+}
+
+.pl-invest-list li {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 10px;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  color: #dde4ea;
+}
+
+.pl-invest-list svg {
+  margin-top: 3px;
+  color: var(--mint);
+}
+
+.pl-invest-note {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 0.9rem;
+  color: #c3cdd6;
+}
+
+.pl-invest-monthly {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 34px 32px;
+  border-radius: var(--radius-card);
+  border-top: 3px solid var(--accent-primary);
+  background: #ffffff;
+}
+
+.pl-invest-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.pl-invest-row.optional {
+  margin-top: auto;
+  padding: 20px;
+  border: 1px dashed rgba(0, 136, 72, 0.4);
+  border-radius: 8px;
+  background: #f4fbf7;
+}
+
+.pl-invest-row-name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.pl-invest-row-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.pl-invest-row-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-shrink: 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.pl-invest-row-price small {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  margin-top: 4px;
+}
+
+.pl-tag {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 3px;
+  background: #e6f3ec;
+  color: var(--accent-primary);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+/* ---------- Approve call to action ---------- */
+.approve-cta {
+  padding: 100px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.approve-cta-button {
+  padding: 16px 34px;
+  font-size: 1.05rem;
+}
+
+/* ---------- Clients ---------- */
+.clients-section {
+  padding: 110px 0;
+  border-bottom: 0;
+}
+
+.clients-section .dealer-title {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  margin-bottom: 28px;
+}
+
+.client-card {
+  border-radius: var(--radius-card);
+}
+
+.client-card:hover {
+  border-color: var(--accent-primary);
+}
+
+.client-card-name {
+  font-size: 1.05rem;
+}
+
+.client-websites-title {
+  margin: 56px 0 20px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.client-websites {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.client-website {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 132px;
+  padding: 22px 20px 18px;
+  border-radius: var(--radius-card);
+  border-top: 3px solid var(--accent-primary);
+  background: var(--bg-secondary);
+  transition: transform 0.2s;
+}
+
+a.client-website:hover {
+  transform: translateY(-2px);
+}
+
+.client-website-name {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.client-website .client-card-platform {
+  color: var(--accent-primary);
+}
+
+/* ---------- PetroLube band before the agency section ---------- */
+.brand-band {
+  background: var(--dark-surface);
+  padding: 40px 0;
+}
+
+.pl-lockup {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.pl-lockup-icon {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.pl-lockup-icon img {
+  width: 38px;
+  height: auto;
+}
+
+.pl-lockup-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pl-lockup-text strong {
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.pl-lockup-text small {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mint);
+}
+
+/* ---------- About Big On Digital ---------- */
+.about-agency {
+  padding: 100px 0 90px;
+}
+
+.about-agency-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+}
+
+.about-agency-text p {
+  font-weight: 400;
+}
+
+.team-card-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+/* ---------- Footer: orange agency bar ---------- */
+.footer {
+  background: var(--agency-orange);
+  border-top: 1px solid rgba(1, 24, 40, 0.25);
+  padding: 18px 0;
+  text-align: left;
+}
+
+.footer .copyright {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--dark-surface-2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ---------- Quotes page ---------- */
+.quotes-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  color: var(--text-primary);
+}
+
+.quote-step-title {
+  font-weight: 800;
+}
+
+.quote-option-name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.quote-option-prices {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.quote-option-price {
+  font-family: var(--font-display);
+  font-weight: 800;
+}
+
+.quote-option.selected {
+  border-color: var(--accent-primary);
+}
+
+.quote-option.selected .quote-option-mark {
+  border-color: var(--accent-primary);
+  background: var(--accent-primary);
+}
+
+.setup-totals + .setup-totals {
+  margin-top: 16px;
+}
+
+.spec-sheet-row.total {
+  background: var(--dark-surface);
+}
+
+.spec-sheet-amount {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.quote-terms {
+  display: grid;
+  gap: 12px;
+}
+
+.quote-terms li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.quote-terms li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--accent-primary);
+}
+
+.summary-card.dark {
+  background: var(--dark-surface);
+}
+
+.summary-title {
+  font-weight: 800;
+}
+
+.summary-empty {
+  font-size: 0.95rem;
+  color: #c3cdd6;
+}
+
+.glass-panel,
+.summary-card,
+.approval-confirm-container,
+.approval-success-container {
+  border-radius: var(--radius-card);
+}
+
+.btn-approve-all,
+.btn-view-all,
+.btn-confirm-yes,
+.btn-confirm-no,
+.btn-success-action {
+  border-radius: var(--radius-button);
+  box-shadow: none;
+}
+
+.btn-approve-all {
+  background: var(--mint);
+  color: var(--dark-surface);
+}
+
+.btn-approve-all:hover {
+  background: #ffffff;
+}
+
+.btn-approve-all:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .pl-stats,
+  .client-websites {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pl-cards.three,
+  .pl-invest {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .pl-section,
+  .clients-section,
+  .about-agency {
+    padding: 72px 0;
+  }
+
+  .approve-cta {
+    padding: 64px 0;
+  }
+
+  .pl-hero {
+    min-height: 380px;
+  }
+
+  .pl-hero-content {
+    padding-bottom: 44px;
+  }
+
+  .pl-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .client-websites {
+    grid-template-columns: 1fr;
+  }
+
+  .pl-invest-build,
+  .pl-invest-monthly {
+    padding: 28px 22px;
+  }
+
+  .pl-invest-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .pl-invest-row-price {
+    align-items: flex-start;
+  }
+
+  .brand-band-inner {
+    gap: 20px;
+  }
+}
