@@ -5,7 +5,7 @@ Client review site for the Big On Digital website proposal to PetroLube Energy. 
 ## Editing
 
 - All proposal copy, prices and images: `src/data/proposalData.js`
-- The quotes and their prices (excluding VAT) are in `quote.quotes`, matching quotes BOD-PLE-2026-01 to 04
+- The quotes and their prices are in `quote.quotes`, matching Zoho Books quotes QUO-000519 to QUO-000522
 - Client website links: add each address to `websites[].url` under the ClientShowcase section
 - Section components: `src/components/pl/` and `src/components/dealer/`
 - PetroLube skin: `src/petrolube-ui.css`

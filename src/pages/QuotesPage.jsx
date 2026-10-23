@@ -9,15 +9,13 @@ import './QuotesDealer.css';
 
 const APPROVAL_RECIPIENT = "dominique@bigondigital.co.za";
 
-// 36000 -> "R36,000"; 4479.25 -> "R4,479.25", matching the quotes
+// 36000 -> "R36,000"; 20695 -> "R20,695", matching the quotes
 const formatRand = (value) => {
   const [whole, cents] = (Math.round(value * 100) / 100).toFixed(2).split('.');
   const withCommas = whole.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   return cents === '00' ? `R${withCommas}` : `R${withCommas}.${cents}`;
 };
 
-// The website and the visual guide are booked with a 50% deposit; the hosting set-up is invoiced when done
-const DEPOSIT_QUOTES = ['website', 'visual-guide'];
 
 const QuotesPage = () => {
   const { data: proposalData } = useEditor();
@@ -27,7 +25,6 @@ const QuotesPage = () => {
 
   const quote = proposalData.quote;
   const quotes = quote.quotes;
-  const vatRate = quote.vatRate;
 
   const [selected, setSelected] = useState(() => new Set(quotes.map(q => q.id)));
 
@@ -41,11 +38,8 @@ const QuotesPage = () => {
   const chosen = quotes.filter(q => selected.has(q.id));
   const onceOffTotal = chosen.reduce((sum, q) => sum + q.onceOff, 0);
   const monthlyTotal = chosen.reduce((sum, q) => sum + q.monthly, 0);
-  const onceOffVat = onceOffTotal * vatRate;
-  const monthlyVat = monthlyTotal * vatRate;
-  const deposit = chosen
-    .filter(q => DEPOSIT_QUOTES.includes(q.id))
-    .reduce((sum, q) => sum + q.onceOff * (1 + vatRate) / 2, 0);
+  // Every once-off item on the quotes is booked with a 50% deposit
+  const deposit = onceOffTotal / 2;
 
   const priceLines = (q) => [
     q.onceOff ? { amount: formatRand(q.onceOff), period: 'once-off' } : null,
@@ -53,7 +47,7 @@ const QuotesPage = () => {
   ].filter(Boolean);
 
   const getApprovalText = () => {
-    const lines = [`${proposalData.client?.name}: Website Proposal approved.`, '', 'Quotes accepted (excluding VAT):'];
+    const lines = [`${proposalData.client?.name}: Website Proposal approved.`, '', 'Quotes accepted:'];
     chosen.forEach(q => {
       const prices = priceLines(q).map(p => `${p.amount} ${p.period}`).join(' + ');
       lines.push(`- ${q.number} ${q.name} (${q.ref}): ${prices}`);
@@ -61,11 +55,11 @@ const QuotesPage = () => {
     });
     lines.push('');
     if (onceOffTotal) {
-      lines.push(`Once-off total: ${formatRand(onceOffTotal)} excl. VAT (${formatRand(onceOffTotal + onceOffVat)} incl. VAT)`);
+      lines.push(`Once-off total: ${formatRand(onceOffTotal)}`);
     }
-    if (deposit) lines.push(`50% deposit to book: ${formatRand(deposit)} incl. VAT`);
+    if (deposit) lines.push(`50% deposit to book: ${formatRand(deposit)}`);
     if (monthlyTotal) {
-      lines.push(`Monthly total: ${formatRand(monthlyTotal)} excl. VAT (${formatRand(monthlyTotal + monthlyVat)} incl. VAT)`);
+      lines.push(`Monthly total: ${formatRand(monthlyTotal)}`);
     }
     return lines.join('\n');
   };
@@ -118,7 +112,7 @@ const QuotesPage = () => {
           <div className="quote-steps">
             <section className="quote-step">
               <h2 className="quote-step-title">Your Quotes</h2>
-              <p className="quote-step-hint">Tick the quotes you accept. All prices exclude VAT.</p>
+              <p className="quote-step-hint">Tick the quotes you accept.</p>
               <div className="quote-options">
                 {quotes.map(q => {
                   const isSelected = selected.has(q.id);
@@ -152,35 +146,19 @@ const QuotesPage = () => {
 
               <div className="spec-sheet setup-totals">
                 <div className="spec-sheet-row total">
-                  <span>Once-off total excl. VAT</span>
+                  <span>Once-off total</span>
                   <span className="spec-sheet-amount">{formatRand(onceOffTotal)}</span>
                 </div>
                 <div className="spec-sheet-row">
-                  <span>VAT (15%)</span>
-                  <span className="spec-sheet-amount">{formatRand(onceOffVat)}</span>
-                </div>
-                <div className="spec-sheet-row">
-                  <span>Once-off total incl. VAT</span>
-                  <span className="spec-sheet-amount">{formatRand(onceOffTotal + onceOffVat)}</span>
-                </div>
-                <div className="spec-sheet-row">
-                  <span>50% deposit to book, incl. VAT</span>
+                  <span>50% deposit to book</span>
                   <span className="spec-sheet-amount">{formatRand(deposit)}</span>
                 </div>
               </div>
 
               <div className="spec-sheet setup-totals">
                 <div className="spec-sheet-row total">
-                  <span>Monthly total excl. VAT</span>
+                  <span>Monthly total</span>
                   <span className="spec-sheet-amount">{formatRand(monthlyTotal)}</span>
-                </div>
-                <div className="spec-sheet-row">
-                  <span>VAT (15%)</span>
-                  <span className="spec-sheet-amount">{formatRand(monthlyVat)}</span>
-                </div>
-                <div className="spec-sheet-row">
-                  <span>Monthly total incl. VAT</span>
-                  <span className="spec-sheet-amount">{formatRand(monthlyTotal + monthlyVat)}</span>
                 </div>
               </div>
             </section>
@@ -205,14 +183,14 @@ const QuotesPage = () => {
                 <div className="summary-group">
                   <p className="summary-group-title">Once-off</p>
                   {chosen.filter(q => q.onceOff).map(q => (
-                    <div key={q.id} className="summary-row"><span>{q.id === 'hosting' ? 'Hosting set-up' : q.name}</span><span className="amount">{formatRand(q.onceOff)}</span></div>
+                    <div key={q.id} className="summary-row"><span>{q.id === 'hosting' ? 'Hosting transfer' : q.name}</span><span className="amount">{formatRand(q.onceOff)}</span></div>
                   ))}
                   <div className="summary-row total">
-                    <span>Total excl. VAT</span>
+                    <span>Once-off total</span>
                     <span className="amount">{formatRand(onceOffTotal)}</span>
                   </div>
                   {deposit > 0 && (
-                    <div className="summary-row"><span>50% deposit incl. VAT</span><span className="amount">{formatRand(deposit)}</span></div>
+                    <div className="summary-row"><span>50% deposit</span><span className="amount">{formatRand(deposit)}</span></div>
                   )}
                 </div>
               )}
@@ -226,7 +204,7 @@ const QuotesPage = () => {
                       <div key={q.id} className="summary-row"><span>{q.name}</span><span className="amount">{formatRand(q.monthly)}</span></div>
                     ))}
                     <div className="summary-row total">
-                      <span>Per month excl. VAT</span>
+                      <span>Per month</span>
                       <span className="amount">{formatRand(monthlyTotal)}</span>
                     </div>
                   </div>

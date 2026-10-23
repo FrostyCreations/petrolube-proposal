@@ -1,6 +1,6 @@
 // PetroLube Energy - Website Proposal (short)
 // Copy follows the approved short proposal. Prices match the PetroLube Energy Quotes
-// (BOD-PLE-2026-01 to 04) and all exclude VAT.
+// (Zoho Books QUO-000519 to QUO-000522). No VAT is added, matching the quotes.
 
 // Zoho Books estimates the client can open, one per quote
 const ESTIMATES = {
@@ -74,7 +74,7 @@ export const proposalData = {
       data: {
         eyebrow: "Investment",
         title: "One Website Build, Then Simple Monthly Care",
-        intro: "All prices exclude VAT. The website build is a once-off cost, and the monthly services start in the month the new website goes live.",
+        intro: "The website build is a once-off cost, and the monthly services start in the month the new website goes live.",
         build: {
           quoteUrl: ESTIMATES.website,
           label: "Website build",
@@ -92,7 +92,7 @@ export const proposalData = {
         },
         monthly: [
           { name: "Website Care and Content", quoteUrl: ESTIMATES.care, price: "R2,990", period: "per month", text: "Updates, backups, security monitoring and one optimised blog article every month." },
-          { name: "Hosting", tag: "Recommended", quoteUrl: ESTIMATES.hosting, price: "R295", period: "per month", text: "Fast South African hosting with SSL, caching and a CDN. Once-off set-up of R890, including your email records." }
+          { name: "Hosting", tag: "Recommended", quoteUrl: ESTIMATES.hosting, price: "R295", period: "per month", text: "Managed South African hosting on xneelo with 10 GB storage, SSL, daily backups, caching and security monitoring. Once-off set-up of R890, including your email records." }
         ],
         optional: { name: "Visual Guide", tag: "Recommended", quoteUrl: ESTIMATES.visualGuide, price: "R4,500", period: "once-off", text: "Optimisation of your existing logo, plus a short guide for colours, fonts and imagery." }
       }
@@ -179,17 +179,16 @@ export const proposalData = {
     }
   ],
 
-  // Quotes page: the four quotes from the PetroLube Energy Quotes (BOD-PLE-2026-01 to 04).
-  // Amounts exclude VAT. `onceOff` and `monthly` are numbers in rand.
+  // Quotes page: the four Zoho Books quotes, QUO-000519 to QUO-000522.
+  // `onceOff` and `monthly` are numbers in rand, as on the Zoho quotes.
   quote: {
-    vatRate: 0.15,
-    validUntil: "19 November 2026",
+    validUntil: "23 November 2026",
     quotes: [
       {
         id: 'website',
         estimateUrl: ESTIMATES.website,
         number: "Quote 1",
-        ref: "BOD-PLE-2026-01",
+        ref: "QUO-000519",
         name: "New Website",
         covers: "WordPress website with a catalogue of up to 60 products, quote forms, content migration, solar removal, imagery and foundational SEO/AEO",
         onceOff: 36000,
@@ -199,9 +198,9 @@ export const proposalData = {
         id: 'care',
         estimateUrl: ESTIMATES.care,
         number: "Quote 2",
-        ref: "BOD-PLE-2026-02",
+        ref: "QUO-000520",
         name: "Website Care and Content",
-        covers: "Updates, backups, security monitoring and one optimised blog article a month. Minimum term of 6 months",
+        covers: "Website maintenance plus one SEO/AEO blog article a month. Initial three-month commitment, then month to month",
         onceOff: 0,
         monthly: 2990
       },
@@ -209,10 +208,10 @@ export const proposalData = {
         id: 'hosting',
         estimateUrl: ESTIMATES.hosting,
         number: "Quote 3",
-        ref: "BOD-PLE-2026-03",
+        ref: "QUO-000521",
         name: "Hosting",
         tag: "Recommended",
-        covers: "Fast, secure South African hosting with SSL, backups and CDN, plus a once-off set-up that fixes your email records",
+        covers: "10 GB managed hosting on xneelo with SSL, daily backups and caching, plus a once-off transfer that fixes your email records. 12-month agreement",
         onceOff: 890,
         monthly: 295
       },
@@ -220,7 +219,7 @@ export const proposalData = {
         id: 'visual-guide',
         estimateUrl: ESTIMATES.visualGuide,
         number: "Quote 4",
-        ref: "BOD-PLE-2026-04",
+        ref: "QUO-000522",
         name: "Visual Guide",
         tag: "Recommended",
         covers: "A visual guide for your logo, colours, fonts and imagery, including optimisation of your existing logo",
@@ -229,9 +228,11 @@ export const proposalData = {
       }
     ],
     terms: [
-      "The website and the visual guide each need a 50% deposit to book, with the balance due before handover.",
-      "Hosting and care are billed monthly in advance and start in the month the new website goes live.",
-      "All prices are in South African rand and exclude VAT, which is added at 15%."
+      "The website, the hosting transfer and the visual guide each need a 50% deposit, with the balance due before handover.",
+      "Website maintenance and content has an initial three-month commitment, then continues month to month.",
+      "Hosting is a 12-month agreement. Either monthly service can be cancelled with 30 days’ written notice.",
+      "Monthly fees are payable in advance, by the last day of the preceding month.",
+      "These quotes are valid until 23 November 2026."
     ]
   }
 };
