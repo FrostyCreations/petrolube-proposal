@@ -121,9 +121,9 @@ export const proposalData = {
         // and shows the name as lettering until a `logoUrl` is added.
         clients: [
           { name: "Ferris Workshop", tagline: "Supercar Service and Repair Specialists", logoUrl: "clients/ferris-group.webp", platform: "Website", url: "https://ferriscars.com/" },
-          { name: "Kulani", tagline: "Website Design and Copy", logoUrl: "", platform: "Website", url: "" },
+          { name: "Kulani Collective", tagline: "Website Design and Copy", logoUrl: "clients/kulani-collective.svg", platform: "Website", url: "" },
           { name: "WHT Electrical", tagline: "Electrical, Solar, Plumbing and Maintenance", logoUrl: "clients/wht-electrical.svg", platform: "Website", url: "https://whtelectrical.co.za/" },
-          { name: "Supercar Rhino Run", tagline: "Record-Breaking Supercar Charity Convoy", logoUrl: "", platform: "Website", url: "" }
+          { name: "Supercar Rhino Run", tagline: "Record-Breaking Supercar Charity Convoy", logoUrl: "clients/supercar-rhino-run.webp", platform: "Website", url: "" }
         ]
       }
     },
